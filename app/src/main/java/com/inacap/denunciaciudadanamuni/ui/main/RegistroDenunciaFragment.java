@@ -32,7 +32,7 @@ public class RegistroDenunciaFragment extends Fragment {
 
         bt_guardar = view.findViewById(R.id.btn_denuncia_guardar);
 
-        bt_guardar.setOnClickListener(new View.OnClickListener() {
+        bt_guardar.setOnClickListener(new View.OnClickListener()  {
             @Override
             public void onClick(View view) {
 
