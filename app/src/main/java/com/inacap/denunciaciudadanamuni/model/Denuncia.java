@@ -1,23 +1,35 @@
 package com.inacap.denunciaciudadanamuni.model;
 
 public class Denuncia {
-
+    public String id;
     public String titulo;
     public String direccion;
     public String estado;
+
+
     public Denuncia(){
 
     }
-
-    public Denuncia(String titulo, String direccion, String estado) {
+    public Denuncia(String id, String titulo, String direccion, String estado) {
+        this.id = id;
         this.titulo = titulo;
         this.direccion = direccion;
         this.estado = estado;
+
     }
 
     public String getTitulo() {
         return titulo;
     }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
