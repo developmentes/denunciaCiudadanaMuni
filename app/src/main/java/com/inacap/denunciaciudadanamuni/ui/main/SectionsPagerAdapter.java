@@ -35,7 +35,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return new RegistroDenunciaFragment();
 
             case 2:
-                return new RegistroDenunciaFragment();
+                return new UsuarioDenuncias();
 
 
         }

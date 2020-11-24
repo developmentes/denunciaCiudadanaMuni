@@ -18,7 +18,7 @@
         android:layout_marginTop="2dp"/>
 
     <TextView
-        android:id="@+id/lista_nombre_denuncia"
+        android:id="@+id/lista_titulo_denuncia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
@@ -26,12 +26,20 @@
 android:layout_toRightOf="@id/lista_logo"
         />
     <TextView
-        android:id="@+id/lista_descripcionn_denuncia"
+        android:id="@+id/lista_direccion_denuncia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Descripcion de tu denuncia "
         android:layout_toRightOf="@id/lista_logo"
-        android:layout_below="@id/lista_nombre_denuncia"
+        android:layout_below="@id/lista_titulo_denuncia"
+        />
+    <TextView
+        android:id="@+id/lista_estado_denuncia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descripcion de tu denuncia "
+        android:layout_toRightOf="@id/lista_logo"
+        android:layout_below="@id/lista_titulo_denuncia"
         />
 
     <View

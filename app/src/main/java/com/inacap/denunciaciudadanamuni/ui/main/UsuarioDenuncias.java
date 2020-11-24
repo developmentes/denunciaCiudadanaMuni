@@ -3,6 +3,8 @@ package com.inacap.denunciaciudadanamuni.ui.main;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.inacap.denunciaciudadanamuni.R;
+import com.inacap.denunciaciudadanamuni.adapter.DenunciaAdapter;
 import com.inacap.denunciaciudadanamuni.model.Denuncia;
 
 import java.util.ArrayList;
@@ -26,9 +29,8 @@ import static android.content.ContentValues.TAG;
 
 
 public class UsuarioDenuncias extends Fragment {
-
+RecyclerView denuncia_rc;
 List<Denuncia> lista;
-TextView txt;
 FirebaseAuth auth;
 
     @Override
@@ -37,7 +39,7 @@ FirebaseAuth auth;
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_usuario_denuncias, container, false);
 
-        txt = view.findViewById(R.id.txt_usuario_denuncias);
+        denuncia_rc = view.findViewById(R.id.denuncias_rc);
         auth = FirebaseAuth.getInstance();
         String uid = auth.getCurrentUser().getUid();
 
@@ -52,7 +54,7 @@ FirebaseAuth auth;
             public void onDataChange(DataSnapshot dataSnapshot) {
                if (dataSnapshot.exists()){
                    lista.clear();
-                   txt.setText("");
+//                   txt.setText("");
 
                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
@@ -60,10 +62,17 @@ FirebaseAuth auth;
                        denuncia.setId(ds.getKey());
                        lista.add(denuncia);
                    }
-                   for ( Denuncia e: lista) {
-                       txt.setText(txt.getText() + e.getId() + e.getTitulo());
 
-                   }
+                   DenunciaAdapter adapter = new DenunciaAdapter(lista,getActivity(),R.layout.lista_denunciasuser);
+
+                   LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+                   layoutManager.setOrientation(RecyclerView.VERTICAL);
+
+                   denuncia_rc.setLayoutManager(layoutManager);
+                   denuncia_rc.setAdapter(adapter);
+//
+//
+//                   }
                }
             }
 

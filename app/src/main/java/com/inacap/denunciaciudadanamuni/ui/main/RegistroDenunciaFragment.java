@@ -61,7 +61,8 @@ public class RegistroDenunciaFragment extends Fragment {
 
                     String uid = auth.getCurrentUser().getUid();//traemos el uid del user desde firebase
                     myRef.child(uid).push().setValue(nuevaDenuncia);//no olvidaR EL PUSH SI NO QUEDA LA K .Tambien agramos ellc child el cual crea un hijo dentro del objeto tarea
-
+                    txt_titulo.setText("");
+                    txt_direccion.setText("");
                     Toast.makeText(getActivity(), "Su denuncia ya esta realizada ,gracias vecino", Toast.LENGTH_LONG).show();
 
                 }

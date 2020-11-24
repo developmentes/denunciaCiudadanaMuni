@@ -6,8 +6,8 @@
     tools:context=".ui.main.UsuarioDenuncias">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/txt_usuario_denuncias"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/denuncias_rc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="" />
