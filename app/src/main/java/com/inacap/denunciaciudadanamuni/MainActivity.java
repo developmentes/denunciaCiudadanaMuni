@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         title.setTextSize(13.0f);
 
         String email = auth.getCurrentUser().getEmail();
-        title.setText("Bienvenido  " + email);
+        title.setText("Usuario " + email );
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
