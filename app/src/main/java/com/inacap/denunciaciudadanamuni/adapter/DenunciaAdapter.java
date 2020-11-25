@@ -14,7 +14,7 @@ import com.inacap.denunciaciudadanamuni.model.Denuncia;
 
 import java.util.List;
 
-public class DenunciaAdapter extends RecyclerView.Adapter<DenunciaAdapter.DenunciaModel> {
+public class DenunciaAdapter extends RecyclerView.Adapter<DenunciaAdapter.DenunciaHolder> {
         public List<Denuncia> lista;
         public int layout;
         Activity activity;
@@ -28,14 +28,14 @@ public class DenunciaAdapter extends RecyclerView.Adapter<DenunciaAdapter.Denunc
 
     @NonNull
     @Override
-    public DenunciaModel onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public DenunciaHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(layout,parent,false);
 
-        return new DenunciaModel(view);
+        return new DenunciaHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DenunciaModel holder, int position) {
+    public void onBindViewHolder(@NonNull DenunciaHolder holder, int position) {
         Denuncia denuncia = lista.get(position);
         holder.id = denuncia.getId();
         holder.titulo_denuncia.setText(denuncia.getTitulo());
@@ -48,11 +48,11 @@ public class DenunciaAdapter extends RecyclerView.Adapter<DenunciaAdapter.Denunc
         return lista.size();
     }
 
-    public class DenunciaModel extends RecyclerView.ViewHolder{
+    public class DenunciaHolder extends RecyclerView.ViewHolder{
     String id;
     TextView titulo_denuncia,direccion_denuncia,estado_denuncia;
 
-        public DenunciaModel(@NonNull View itemView) {
+        public DenunciaHolder(@NonNull View itemView) {
             super(itemView);
 
             titulo_denuncia = itemView.findViewById(R.id.lista_titulo_denuncia);

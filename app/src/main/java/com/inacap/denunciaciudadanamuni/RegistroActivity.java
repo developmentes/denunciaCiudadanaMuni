@@ -3,6 +3,7 @@ package com.inacap.denunciaciudadanamuni;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -74,4 +75,9 @@ public class RegistroActivity extends AppCompatActivity {
 
     }
 
+    public void recuperaClave(View view) {
+
+        Intent intent = new Intent(this, RecuperaClave.class);
+        startActivity(intent);
+    }
 }

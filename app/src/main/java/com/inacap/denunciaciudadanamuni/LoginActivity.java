@@ -2,11 +2,21 @@ package com.inacap.denunciaciudadanamuni;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.drawable.RoundedBitmapDrawable;
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.transition.Slide;
+import android.transition.Transition;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,9 +34,16 @@ public class LoginActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         txtemail = findViewById(R.id.txt_login_email);
         txtclave = findViewById(R.id.txt_login_pass);
+
+
     }
 
+
+
     public void cargarRegistro(View view) {
+
+
+
 
         Intent intent = new Intent(this, RegistroActivity.class);
         startActivity(intent);
@@ -60,4 +77,17 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    public void cuenta(View view) {
+
+        Intent intent  = new Intent(LoginActivity.this,RegistroActivity.class);
+        startActivity(intent);
+        finish();
+
+
+    }
+
+    public void recuperaClave(View view) {
+        Intent intent = new Intent(this, RecuperaClave.class);
+        startActivity(intent);
+    }
 }

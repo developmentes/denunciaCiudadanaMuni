@@ -10,6 +10,10 @@ import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.transition.Slide;
+import android.transition.Transition;
+import android.transition.TransitionValues;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -54,4 +58,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 }
